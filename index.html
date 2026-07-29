@@ -4,246 +4,456 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>💖</title>
+<title>💖 Happy Girlfriend's Day 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair Display', serif;
-    overflow: hidden;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* ROTATE SCREEN */
-#rotate {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: black;
-    color: white;
-    font-size: 22px;
-    z-index: 99999;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Playfair Display',serif;
+background:#000;
 }
 
-/* SHOW ROTATE ONLY ON MOBILE PORTRAIT */
-@media only screen and (max-width: 900px) and (orientation: portrait) {
-    #rotate {
-        display: flex;
-    }
-
-    section {
-        display: none;
-    }
+#rotate{
+display:none;
+position:fixed;
+inset:0;
+background:black;
+color:white;
+font-size:22px;
+justify-content:center;
+align-items:center;
+text-align:center;
+z-index:9999;
+padding:20px;
 }
 
-/* MOBILE TEXT FIX */
-@media only screen and (max-width: 900px) {
-    h1 {
-        font-size: 32px;
-        letter-spacing: 3px;
-    }
+@media(max-width:900px) and (orientation:portrait){
 
-    h2 {
-font-size: 14px;
-    }
-
-    .frame {
-        padding: 20px;
-    }
+#rotate{
+display:flex;
 }
 
-/* PAGES */
-section {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+section{
+display:none !important;
 }
 
-section.active {
-    opacity: 1;
-    z-index: 1;
 }
 
-/* FULL BACKGROUNDS */
-#page1 { background: url('bg1.jpg') center/cover no-repeat; }
-#page2 { background: url('bg2.jpg') center/cover no-repeat; }
-#page3 { background: url('bg3.jpg') center/cover no-repeat; }
-#page4 { background: url('bg4.jpg') center/cover no-repeat; }
-#page5 { background: url('bg5.jpg') center/cover no-repeat; }
-#page6 { background: url('bg6.jpg') center/cover no-repeat; }
-
-/* DARK OVERLAY */
-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+section{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:.7s;
+background-size:cover;
+background-position:center;
 }
 
-/* CONTENT */
-.frame {
-    text-align: center;
-    color: white;
-    z-index: 2;
-    max-width: 700px;
+section.active{
+opacity:1;
+z-index:2;
 }
 
-/* TEXT */
-h1 {
-    font-size: 60px;
-letter-spacing: 6px;
-    margin: 0;
+section::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
 }
 
-h2 {
-    font-size: 18px;
-    margin-top: 15px;
+#page1{
+background-image:url("bg1.jpg");
 }
 
-/* BUTTON */
-button {
-    margin-top: 25px;
-    padding: 10px 25px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+#page2{
+background-image:url("bg2.jpg");
 }
 
-button:hover {
-    background: white;
-    color: black;
+#page3{
+background-image:url("bg3.jpg");
 }
+
+#page4{
+background-image:url("bg4.jpg");
+}
+
+#page5{
+background-image:url("bg5.jpg");
+}
+
+#page6{
+background-image:url("bg6.jpg");
+}
+
+.frame{
+position:relative;
+z-index:5;
+width:min(90%,750px);
+padding:35px;
+text-align:center;
+color:white;
+}
+
+h1{
+
+font-size:clamp(28px,5vw,60px);
+line-height:1.25;
+letter-spacing:2px;
+margin-bottom:18px;
+
+}
+
+h2{
+
+font-size:clamp(16px,2vw,22px);
+line-height:1.7;
+font-weight:400;
+
+}
+
+button{
+
+margin:12px;
+padding:12px 28px;
+font-size:16px;
+border:1px solid white;
+background:transparent;
+color:white;
+cursor:pointer;
+border-radius:40px;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:white;
+color:black;
+
+}
+
+@media(max-width:900px){
+
+.frame{
+
+padding:20px;
+
+}
+
+}
+
 </style>
 </head>
 
 <body>
-<!-- ROTATE MESSAGE -->
+
 <div id="rotate">
-  <div>Rotate your phone 📱➡️</div>
+Rotate your phone 📱➡️
 </div>
 
 <audio id="music" src="bairan.mp3" loop></audio>
 
-<!-- PAGE 1 -->
 <section id="page1" class="active">
+
 <div class="frame">
-<h1>WHAT'S TODAY</h1>
-<button onclick="start()">ENTER</button>
+
+<h1>WHAT'S TODAY?</h1>
+
+<button onclick="start()">
+ENTER ❤️
+</button>
+
 </div>
+
 </section>
 
-<!-- PAGE 2 -->
 <section id="page2">
-<div class="frame">
-<h1>HAPPIEST <br>GIRLFRIEND'S DAY <br>BABYGURLLL</h1>
-<h2 id="text">Does my betu hates me(apne wala)? 🥰</h2>
-<button onclick="yesClick()">YES</button>
-<button id="no">NO</button>
-</div>
-</section>
 
-<!-- PAGE 3 -->
+<div class="frame">
+
+<h1>
+
+HAPPIEST<br>
+
+GIRLFRIEND'S DAY<br>
+
+BABYGURLLL ❤️
+
+</h1>
+
+<h2 id="text">
+
+Does my betu hate me? 🥺
+
+</h2>
+
+<button onclick="yesClick()">
+
+YES 💖
+
+</button>
+
+<button id="no">
+    
+NO 😒
+
+</button>
+
+</div>
+
+</section>
 <section id="page3">
+
 <div class="frame">
-<h1>Pata haiii main shayad har baar apni feelings perfectly express nahi kar pata huu lekin ek baat hamesha sach rahegi that meri life mein tumhari jagah koi nahi le sakta.</h1>
-<h2>you’re the bestest thing happened to me 💖</h2>
-<button onclick="go('page4')">NEXT</button>
+
+<h1>
+Pata haiii...
+</h1>
+
+<h2>
+
+Main shayad har baar apni feelings perfectly express nahi kar pata hu,
+lekin ek baat hamesha sach rahegi...
+
+Meri life mein tumhari jagah koi nahi le sakta.
+
+You are the best thing that has ever happened to me. ❤️
+
+</h2>
+
+<button onclick="go('page4')">
+
+NEXT ➜
+
+</button>
+
 </div>
+
 </section>
 
-<!-- PAGE 4 -->
 <section id="page4">
+
 <div class="frame">
-<h1>you mean so much to me</h1>
-<h2>Tere saath har chhoti si baatte ho ya hasi yeh saari memory mere liye bahut special h mwah Kabhi hum log haste h
-  kabhi thoda (kaafi jyada) ladte h lekin har din mujhe ye feel hota hai ki tu meri life ki sabse speacial part h!! 💖</h2>
-<h2 style="font-size:10px;"></h2>
-<button onclick="go('page5')">NEXT</button>
+
+<h1>
+
+You Mean So Much To Me ❤️
+
+</h1>
+
+<h2>
+
+Tere saath har chhoti si baat,
+har hasi,
+har fight,
+har call,
+har memory...
+
+Sab kuch mere liye bahut special hai.
+
+Kabhi hum haste hain...
+kabhi hum ladte hain...
+
+Lekin har din mujhe sirf ek hi baat feel hoti hai...
+
+Tu meri life ka sabse beautiful part hai. 🌸
+
+</h2>
+
+<button onclick="go('page5')">
+
+NEXT ➜
+
+</button>
+
 </div>
+
 </section>
-<!-- PAGE 5 -->
+
 <section id="page5">
-<h1>mujhe Thank you bol teri life mein aane ke liye
-  tujhe samajhne ke liye aur har situation me tera saath khade rehne ke liye😂</h1>
-<h2>  mai Bas itna chahta hu ki hum dono aise hi saath me aur bhi bahut saari yaadein banate rahein. <h2>
-<h3 style="font-size:10px;"></h3>
+
 <div class="frame">
-<button onclick="go('page6')">NEXT</button>
+
+<h1>
+
+THANK YOU ❤️
+
+</h1>
+
+<h2>
+
+Meri life mein aane ke liye...
+
+Mujhe samajhne ke liye...
+
+Har situation mein mera saath dene ke liye...
+
+Aur meri life ko itna beautiful banane ke liye...
+
+Bas itna chahta hu...
+
+Hum dono aise hi hamesha saath rahein
+aur bahut saari memories banayein. 🥹💖
+
+</h2>
+
+<button onclick="go('page6')">
+
+LAST PAGE ❤️
+
+</button>
+
 </div>
+
 </section>
-<!-- PAGE 6 -->
 <section id="page6">
+
 <div class="frame">
-<h1>Bas itna hi kehna tha...</h1>
-<h2>Happy Girlfriend's Day mazhi baikoo ❤️
-I love you more than words can explain!!
-– by tera cutu Vansh 🌸 💖</h2>
-<button onclick="go('page1')">Replay 💖</button>
+
+<h1>
+
+Bas Itna Hi Kehna Tha... ❤️
+
+</h1>
+
+<h2>
+
+Happy Girlfriend's Day,
+Mazhi Baikoo ❤️
+
+I Love You More Than
+Words Can Ever Explain.
+
+Thank you for being
+the most beautiful part
+of my life.
+
+Forever Yours...
+
+❤️ Tera Cutu Vansh ❤️
+
+</h2>
+
+<button onclick="go('page1')">
+
+Replay 💖
+
+</button>
+
 </div>
+
 </section>
 
 <script>
-// FULLSCREEN FUNCTION
-function openFullscreen() {
-    let elem = document.documentElement;
 
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen(); // Safari
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen(); // IE
-    }
+function openFullscreen(){
+
+let elem=document.documentElement;
+
+if(elem.requestFullscreen){
+
+elem.requestFullscreen();
+
+}else if(elem.webkitRequestFullscreen){
+
+elem.webkitRequestFullscreen();
+
+}else if(elem.msRequestFullscreen){
+
+elem.msRequestFullscreen();
+
+}
+
 }
 
 function start(){
-    openFullscreen(); // 👈 fullscreen trigger
-    document.getElementById("music").play();
-    go("page2");
+
+openFullscreen();
+
+document.getElementById("music").play().catch(()=>{});
+
+go("page2");
+
 }
+
 function go(id){
-    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+
+document.querySelectorAll("section").forEach(section=>{
+
+section.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active");
+
 }
 
 function yesClick(){
-    document.getElementById("text").innerText="yey aagya line pe 😏💖";
-    setTimeout(()=>go("page3"),1200);
+
+document.getElementById("text").innerHTML="Yeyyy!! ❤️🥹";
+
+setTimeout(function(){
+
+go("page3");
+
+},1200);
+
 }
 
 let no=document.getElementById("no");
+
 let text=document.getElementById("text");
+
 let clicks=0;
 
-no.addEventListener("click",()=>{
-    clicks++;
+no.addEventListener("click",function(){
 
-    if(clicks==1){
-        text.innerText="huh teri himmat kaise hui? 😒";
-    }
-else if(clicks==2){
-        text.innerText="tu nahi sudherega 😑";
-    }
-    else{
-        text.innerText="ab pakad ke dikha 😏";
-        no.style.position="absolute";
-        no.style.left=Math.random()*80+"vw";
-        no.style.top=Math.random()*80+"vh";
-    }
+clicks++;
+
+if(clicks==1){
+
+text.innerHTML="Huh? 😒";
+}    
+  else if(clicks==2){
+
+text.innerHTML="Tu nahi sudhrega 😑";
+
+}
+
+else if(clicks==3){
+
+text.innerHTML="Sach me NO? 🥺";
+
+}
+
+else{
+
+text.innerHTML="Ab pakad ke dikha 😏";
+
+no.style.position="fixed";
+
+no.style.left=Math.random()*80+"vw";
+
+no.style.top=Math.random()*80+"vh";
+
+}
+
 });
+
 </script>
 
 </body>
-</html>
+</html> 
