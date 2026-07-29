@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+/* ROTATE SCREEN */
+#rotate {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    font-size: 22px;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* SHOW ROTATE ONLY ON MOBILE PORTRAIT */
+@media only screen and (max-width: 900px) and (orientation: portrait) {
+    #rotate {
+        display: flex;
+    }
+
+    section {
+        display: none;
+    }
+}
+
+/* MOBILE TEXT FIX */
+@media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    h2 {
+font-size: 14px;
+    }
+
+    .frame {
+        padding: 20px;
+    }
+}
+
+/* PAGES */
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+section.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* FULL BACKGROUNDS */
+#page1 { background: url('bg1.jpg') center/cover no-repeat; }
+#page2 { background: url('bg2.jpg') center/cover no-repeat; }
+#page3 { background: url('bg3.jpg') center/cover no-repeat; }
+#page4 { background: url('bg4.jpg') center/cover no-repeat; }
+#page5 { background: url('bg5.jpg') center/cover no-repeat; }
+#page6 { background: url('bg6.jpg') center/cover no-repeat; }
+
+/* DARK OVERLAY */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+/* CONTENT */
+.frame {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 700px;
+}
+
+/* TEXT */
+h1 {
+    font-size: 60px;
+letter-spacing: 6px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* BUTTON */
+button {
+    margin-top: 25px;
+    padding: 10px 25px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+<!-- ROTATE MESSAGE -->
+<div id="rotate">
+  <div>Rotate your phone 📱➡️</div>
+</div>
+
+<audio id="music" src="bairan.mp3" loop></audio>
+
+<!-- PAGE 1 -->
+<section id="page1" class="active">
+<div class="frame">
+<h1>WHAT'S TODAY</h1>
+<button onclick="start()">ENTER</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2">
+<div class="frame">
+<h1>HAPPIEST <br>GIRLFRIEND'S DAY <br>BABYGURLLL</h1>
+<h2 id="text">Does my betu hates me(apne wala)? 🥰</h2>
+<button onclick="yesClick()">YES</button>
+<button id="no">NO</button>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3">
+<div class="frame">
+<h1>Pata haiii main shayad har baar apni feelings perfectly express nahi kar pata huu lekin ek baat hamesha sach rahegi that meri life mein tumhari jagah koi nahi le sakta.</h1>
+<h2>you’re the bestest thing happened to me 💖</h2>
+<button onclick="go('page4')">NEXT</button>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4">
+<div class="frame">
+<h1>you mean so much to me</h1>
+<h2>Tere saath har chhoti si baatte ho ya hasi yeh saari memory mere liye bahut special h mwah Kabhi hum log haste h
+  kabhi thoda (kaafi jyada) ladte h lekin har din mujhe ye feel hota hai ki tu meri life ki sabse speacial part h!! 💖</h2>
+<h2 style="font-size:14px;"></h2>
+<button onclick="go('page5')">NEXT</button>
+</div>
+</section>
+<!-- PAGE 5 -->
+<section id="page5">
+<h1>mujhe Thank you bol teri life mein aane ke liye
+  tujhe samajhne ke liye aur har situation me tera saath khade rehne ke liye😂</h1>
+<h2>  mai Bas itna chahta hu ki hum dono aise hi saath me aur bhi bahut saari yaadein banate rahein. <h2>
+<div class="frame">
+<button onclick="go('page6')">NEXT</button>
+</div>
+</section>
+
+<!-- PAGE 6 -->
+<section id="page6">
+<div class="frame">
+<h1>Bas itna hi kehna tha...</h1>
+<h2>Happy Girlfriend's Day mazhi baikoo ❤️
+I love you more than words can explain!!
+– by tera cutu Vansh 🌸 💖</h2>
+<button onclick="go('page1')">Replay 💖</button>
+</div>
+</section>
+
+<script>
+// FULLSCREEN FUNCTION
+function openFullscreen() {
+    let elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen(); // Safari
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen(); // IE
+    }
+}
+
+function start(){
+    openFullscreen(); // 👈 fullscreen trigger
+    document.getElementById("music").play();
+    go("page2");
+}
+function go(id){
+    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function yesClick(){
+    document.getElementById("text").innerText="yey aagya line pe 😏💖";
+    setTimeout(()=>go("page3"),1200);
+}
+
+let no=document.getElementById("no");
+let text=document.getElementById("text");
+let clicks=0;
+
+no.addEventListener("click",()=>{
+    clicks++;
+
+    if(clicks==1){
+        text.innerText="huh teri himmat kaise hui? 😒";
+    }
+else if(clicks==2){
+        text.innerText="tu nahi sudherega 😑";
+    }
+    else{
+        text.innerText="ab pakad ke dikha 😏";
+        no.style.position="absolute";
+        no.style.left=Math.random()*80+"vw";
+        no.style.top=Math.random()*80+"vh";
+    }
+});
+</script>
+
+</body>
+</html>
